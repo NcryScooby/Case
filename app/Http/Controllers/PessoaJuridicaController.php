@@ -76,6 +76,10 @@ class PessoaJuridicaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $pessoaJuridica = PessoaJuridica::find($id);
+
+        $pessoaJuridica->delete();
+
+        return redirect()->route("pessoa_juridica.index");
     }
 }

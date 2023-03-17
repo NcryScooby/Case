@@ -7,6 +7,7 @@
         <th scope="col">Nome</th>
         <th scope="col">Nome Fantasia</th>
         <th scope="col">CNPJ</th>
+        <th scope="col">Ações</th>
       </tr>
     </thead>
     <tbody>
@@ -15,6 +16,13 @@
           <td>{{ $juridica->nome }}</td>
           <td>{{ $juridica->nome_fantasia }}</td>
           <td>{{ $juridica->cnpj }}</td>
+          <td>
+            <form action="{{ route('pessoa_juridica.destroy', $juridica->id) }}" method="POST" class="d-inline">
+              @csrf
+              @method('DELETE')
+              <button type="submit" class="btn btn-danger btn-sm delete">Excluir</button>
+            </form>
+          </td>
         </tr>
       @endforeach
     </tbody>

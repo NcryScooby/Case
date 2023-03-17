@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-  <h3>Adicionar Pessoa Física</h3>
+  <h3>Pessoa Física</h3>
   <form action="{{ route('pessoa_fisica.store') }}" method="POST">
     @csrf
     <div class="form-group">
@@ -24,7 +24,7 @@
 
     <div>
       <button type="submit" class="btn btn-primary mt-2">Adicionar</button>
-      <a href="{{ route('pessoa_fisica.index') }}" class="btn btn-secondary mt-2">Listar Pessoas Físicas</a>
+      <a href="{{ route('pessoa_fisica.index') }}" class="btn btn-secondary mt-2">Listar</a>
     </div>
 
   </form>

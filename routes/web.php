@@ -55,3 +55,12 @@ Route::get("/juridica/xml", function () {
     $pessoas = App\Models\PessoaJuridica::all();
     return response()->xml(["pessoas" => $pessoas->toArray()]);
 });
+
+Route::delete("/fisica/{id}", [PessoaFisicaController::class, "destroy"])->name(
+    "pessoa_fisica.destroy"
+);
+
+Route::delete("/juridica/{id}", [
+    PessoaJuridicaController::class,
+    "destroy",
+])->name("pessoa_juridica.destroy");
