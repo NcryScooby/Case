@@ -45,3 +45,13 @@ Route::get("/juridica/listar", [
     PessoaJuridicaController::class,
     "index",
 ])->name("pessoa_juridica.index");
+
+Route::get("/fisica/xml", function () {
+    $pessoas = App\Models\PessoaFisica::all();
+    return response()->xml(["pessoas" => $pessoas->toArray()]);
+});
+
+Route::get("/juridica/xml", function () {
+    $pessoas = App\Models\PessoaJuridica::all();
+    return response()->xml(["pessoas" => $pessoas->toArray()]);
+});

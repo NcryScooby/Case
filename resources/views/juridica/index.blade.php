@@ -19,6 +19,6 @@
       @endforeach
     </tbody>
   </table>
-  <a href="{{ route('pessoa_fisica.create') }}" class="btn btn-primary mt-2">Gerar XML</a>
+  <a href="/juridica/xml" class="btn btn-primary mt-2">Gerar XML</a>
   <a href="{{ route('pessoa_juridica.create') }}" class="btn btn-secondary mt-2">Voltar</a>
 @endsection
